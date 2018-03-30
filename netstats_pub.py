@@ -25,7 +25,7 @@ contents["measurement"]= "Network"
 contents["tags"]={}
 contents["tags"]["mac"]"=' '
 contents["tags"]["ESSID"]=" "
-contents["tags"]["PI_ID"]=9009
+contents["tags"]["PI_ID"]=9012
 contents["fields"]={}
 
 
@@ -108,9 +108,10 @@ while 1:
             my_dictionary[str(part[0])]=str(part[1])
     for key in my_dictionary:
         lin=my_dictionary[key]
-        p = re.split(r'"+', lin)[1]
-        contents["fields"]["ESSID"] = p[1]
-        split_again = re.split(r' +', p[2])
+        p = re.split(r'"+', lin)
+        contents["fields"]["ESSID"] = p[0]
+        contents["tags"]["ESSID"]=p[0]
+        split_again = re.split(r' +', p[1])
         contents["fields"]["Channel_Frequency"] = split_again[1]
         partition = re.split(r'/', split_again[3])
         part = partition[0]

@@ -95,6 +95,7 @@ if __name__ == '__main__':
 
 
 while 1:
+    os.system('iwlist wlan0 scan |bash sni.sh >b.txt')
     lines = open("b.txt", "r").readlines()[1:]
     my_dictionary={}
 

@@ -22,8 +22,10 @@ global IFclient,objects
 json_body=[]
 contents={}
 contents["measurement"]= "Network"
-#contents["tags"]["mac"]"={}
-#contents["tags"]["ESSID"]="essid"
+contents["tags"]={}
+contents["tags"]["mac"]"=' '
+contents["tags"]["ESSID"]=" "
+contents["tags"]["PI_ID"]=9009
 contents["fields"]={}
 
 
